@@ -1,0 +1,28 @@
+{
+    "site": {
+        "name": "RozKaQuiz",
+        "link": "https://example.com/quiz",
+        "logo": "https://res.cloudinary.com/djld1odci/image/upload/v1778499447/logo_guwe7n.png",
+        "favicon": "https://res.cloudinary.com/djld1odci/image/upload/v1778499447/favicon_njikn6.png",
+        "preview_image": "https://res.cloudinary.com/djld1odci/image/upload/v1778499454/preview_lvprez.png"
+    },
+
+    "social": [
+        {
+            "link": "https://facebook.com/rozkaquiz",
+            "icon": "fab fa-facebook-f"
+        },
+        {
+            "link": "https://instagram.com/rozkaquiz",
+            "icon": "fab fa-instagram"
+        },
+        {
+            "link": "https://youtube.com/@rozkaquiz",
+            "icon": "fab fa-youtube"
+        },
+        {
+            "link": "https://telegram.me/rozkaquiz",
+            "icon": "fab fa-telegram-plane"
+        }
+    ]
+}

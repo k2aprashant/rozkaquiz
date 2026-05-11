@@ -1,0 +1,31 @@
+{
+    "quiz_cards": [
+        {
+            "title": "SSC GD Mock Test 2026",
+            "link": "https://example.com/ssc-gd-quiz",
+            "category": "SSC",
+            "difficulty": "Easy",
+            "description": "Practice SSC GD previous year questions with detailed solutions.",
+            "questions": "25",
+            "time": "15 Min"
+        },
+        {
+            "title": "Railway Group D Quiz",
+            "link": "https://example.com/railway-groupd",
+            "category": "Railway",
+            "difficulty": "Medium",
+            "description": "Improve your Railway exam preparation with daily quizzes.",
+            "questions": "30",
+            "time": "20 Min"
+        },
+        {
+            "title": "UP Police Constable Test",
+            "link": "https://example.com/up-police",
+            "category": "Police",
+            "difficulty": "Hard",
+            "description": "Full practice set for UP Police constable recruitment exam.",
+            "questions": "40",
+            "time": "25 Min"
+        }
+    ]
+}

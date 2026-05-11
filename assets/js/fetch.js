@@ -1,16 +1,18 @@
 /*=========================DYNAMIC DOMAIN=========================*/
 const currentDomain = window.location.origin;
+const pra = "https://script.google.com/macros/s/AKfycbzCK7ZSdk2ifxU806-xsdy6pvYETRYEIkDAa7bqQPgjUc8pO2yNRBcayMCEN6tLPZIJ/exec";
 
 document.getElementById("canonicalUrl").setAttribute("href", currentDomain);
 document.getElementById("ogUrl").setAttribute("content", currentDomain);
 
-fetch("https://sheetdb.io/api/v1/8fvil96j4h6gr?sheet=govt_strip")
+fetch(`${pra}?sheet=govt_strip`)
     .then(response => response.json())
     .then(data => {
-        /* ========================= GOVT EXAM STRIP ========================= */
+
         const examStripContainer = document.getElementById("examStripContainer");
 
         data.forEach(exam => {
+
             examStripContainer.innerHTML += `
                 <div class="flex-shrink-0 w-36 md:w-auto snap-center group cursor-pointer">
                     <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
@@ -26,10 +28,12 @@ fetch("https://sheetdb.io/api/v1/8fvil96j4h6gr?sheet=govt_strip")
                         </div>
                     </div>
                 </div>`;
+
         });
+
     });
 
-fetch("https://sheetdb.io/api/v1/8fvil96j4h6gr?sheet=setting")
+fetch(`${pra}?sheet=setting`)
     .then(response => response.json())
     .then(quiz => {
         const data = quiz[0];
@@ -62,37 +66,41 @@ fetch("https://sheetdb.io/api/v1/8fvil96j4h6gr?sheet=setting")
                 `${currentDomain}/${data.preview_image}`
             );
 
-        /* ========================= SCHEMA JSON ========================= */
-        const schemaData = {
-            "@context": "https://schema.org",
-            "@type": "EducationalOrganization",
-            "name": data.name,
-            "url": currentDomain,
-            "logo": `${currentDomain}/${data.logo}`,
-            "sameAs": data.socials.map(social => social.link)
-        };
+        /* ========================= FETCH SOCIAL ========================= */
+        fetch(`${pra}?sheet=social`)
+            .then(response => response.json())
+            .then(socials => {
 
-        document.getElementById("schemaJson").textContent = JSON.stringify(schemaData);
+                /* ========================= SOCIAL ICONS ========================= */
+                const socialContainer = document.getElementById("socialIcons");
+
+                socials.forEach(social => {
+
+                    socialContainer.innerHTML += `
+                        <a href="${social.link}" target="_blank" class="group">
+                            <div class="w-12 h-12 bg-brandBlue rounded-full flex items-center justify-center hover:bg-brandYellow hover:scale-110 transition-all duration-300 shadow-md">
+                                <i class="${social.icon} text-white group-hover:text-brandBlue transition-colors"></i>
+                            </div>
+                        </a>
+                    `;
+                });
+
+                /* ========================= SCHEMA JSON ========================= */
+                const schemaData = {
+                    "@context": "https://schema.org",
+                    "@type": "EducationalOrganization",
+                    "name": data.name,
+                    "url": currentDomain,
+                    "logo": data.logo,
+                    "sameAs": socials.map(social => social.link)
+                };
+
+                document.getElementById("schemaJson").textContent =
+                    JSON.stringify(schemaData);
+            });
     });
 
-fetch("https://sheetdb.io/api/v1/8fvil96j4h6gr?sheet=social")
-    .then(response => response.json())
-    .then(data => {
-        /* ========================= SOCIAL ICONS ========================= */
-        const socialContainer = document.getElementById("socialIcons");
-
-        data.forEach(social => {
-            socialContainer.innerHTML += `
-                <a href="${social.link}" target="_blank" class="group">
-                    <div class="w-12 h-12 bg-brandBlue rounded-full flex items-center justify-center hover:bg-brandYellow hover:scale-110 transition-all duration-300 shadow-md">
-                        <i class="${social.icon} text-white group-hover:text-brandBlue transition-colors"></i>
-                    </div>
-                </a>
-            `;
-        });
-    });
-
-fetch("https://sheetdb.io/api/v1/8fvil96j4h6gr?sheet=quiz_cards")
+fetch(`${pra}?sheet=quiz_cards`)
     .then(response => response.json())
     .then(data => {
 

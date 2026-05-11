@@ -1,0 +1,8 @@
+{
+    "link": "https://youtube.com/@rozkaquiz",
+    "icon": "fab fa-youtube"
+},
+{
+    "link": "https://telegram.me/rozkaquiz",
+    "icon": "fab fa-telegram-plane"
+}

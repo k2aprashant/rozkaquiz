@@ -9,20 +9,12 @@
 
     "social": [
         {
-            "link": "https://facebook.com/rozkaquiz",
+            "link": "https://facebook.com/RozKaQuiz",
             "icon": "fab fa-facebook-f"
         },
         {
-            "link": "https://instagram.com/rozkaquiz",
+            "link": "https://www.instagram.com/rozkaquiz",
             "icon": "fab fa-instagram"
-        },
-        {
-            "link": "https://youtube.com/@rozkaquiz",
-            "icon": "fab fa-youtube"
-        },
-        {
-            "link": "https://telegram.me/rozkaquiz",
-            "icon": "fab fa-telegram-plane"
         }
     ]
 }

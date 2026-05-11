@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RozKaQuiz - Daily Govt Exam Practice</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#0A2A8A',
+                        brandYellow: '#F7C325',
+                        brandWhite: '#FFFFFF',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <base target="_blank"> -->
+</head>
+
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- 1. Sticky Navbar -->
+    <nav id="navbar"
+        class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-brandBlue rounded-lg flex items-center justify-center">
+                        <span class="text-brandYellow font-bold text-sm">RQ</span>
+                    </div>
+                    <span class="text-brandBlue font-bold text-xl tracking-tight">RozKaQuiz</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-gray-600 hover:text-brandBlue font-medium transition-colors">Home</a>
+                    <a href="#quiz" class="text-gray-600 hover:text-brandBlue font-medium transition-colors">Quiz</a>
+                    <a href="#contact"
+                        class="text-gray-600 hover:text-brandBlue font-medium transition-colors">Contact</a>
+                    <a href="#quiz"
+                        class="bg-brandYellow text-brandBlue font-semibold px-5 py-2.5 rounded-lg hover:bg-yellow-400 transition-colors shadow-sm">
+                        Start Quiz
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-600 hover:text-brandBlue">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#home" class="block py-2 text-gray-600 hover:text-brandBlue font-medium text-sm">Home</a>
+                <a href="#quiz" class="block py-2 text-gray-600 hover:text-brandBlue font-medium text-sm">Quiz</a>
+                <a href="#contact" class="block py-2 text-gray-600 hover:text-brandBlue font-medium text-sm">Contact</a>
+                <a href="#quiz"
+                    class="block bg-brandYellow text-brandBlue font-semibold text-sm px-5 py-2.5 rounded-lg text-center mt-2">
+                    Start Quiz
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <section id="home" class="pt-16">
+        <div class="relative w-full h-[380px] sm:h-[420px] md:h-[460px] overflow-hidden">
+            <!-- Hero Background Image -->
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1400&h=500&fit=crop&q=80"
+                alt="Students preparing for government exams" class="w-full h-full object-cover">
+            <!-- Subtle overlay for text readability -->
+            <div class="absolute inset-0 bg-brandBlue/70"></div>
+
+            <!-- Hero Content -->
+            <div class="absolute inset-0 flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div class="max-w-xl">
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+                            Practice Daily & Crack Govt Exams
+                        </h1>
+                        <p class="text-white/90 text-base sm:text-lg mb-6 font-light">
+                            Daily quiz practice for SSC, Railway, Banking & other govt exams.
+                        </p>
+                        <a href="#quiz"
+                            class="inline-block bg-brandYellow text-brandBlue font-semibold text-sm sm:text-base px-7 py-3 rounded-lg hover:bg-yellow-400 transition-colors shadow-lg">
+                            Start Today's Quiz
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Govt Exam Strip Section -->
+    <section class="py-10 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-500 text-sm font-medium mb-6 tracking-wide uppercase">Prepare For Top Exams
+            </p>
+
+            <!-- Desktop Grid / Mobile Horizontal Scroll -->
+            <div
+                class="flex md:grid md:grid-cols-6 gap-4 overflow-x-auto scrollbar-hide pb-2 md:pb-0 snap-x snap-mandatory">
+
+                <!-- SSC -->
+                <div class="flex-shrink-0 w-36 md:w-auto snap-center group cursor-pointer">
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/2932b388-784d-4fae-a52f-737108099cca.jpg"
+                                alt="SSC Exam"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-2.5 text-center">
+                            <p class="text-brandBlue font-semibold text-sm">SSC</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Railway -->
+                <div class="flex-shrink-0 w-36 md:w-auto snap-center group cursor-pointer">
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/569f2697-1521-4383-a515-f3957ff992ad.jpg"
+                                alt="Railway Exam"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-2.5 text-center">
+                            <p class="text-brandBlue font-semibold text-sm">Railway</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banking -->
+                <div class="flex-shrink-0 w-36 md:w-auto snap-center group cursor-pointer">
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/2932b388-784d-4fae-a52f-737108099cca.jpg"
+                                alt="Banking Exam"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-2.5 text-center">
+                            <p class="text-brandBlue font-semibold text-sm">Banking</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Police -->
+                <div class="flex-shrink-0 w-36 md:w-auto snap-center group cursor-pointer">
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="https://static.toiimg.com/thumb/msid-123848192,imgsize-205594,width-400,resizemode-4/rajasthan-police-constable-exam-2025.jpg"
+                                alt="Police Exam"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-2.5 text-center">
+                            <p class="text-brandBlue font-semibold text-sm">Police</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UPSC -->
+                <div class="flex-shrink-0 w-36 md:w-auto snap-center group cursor-pointer">
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="https://www.livemint.com/lm-img/img/2024/08/21/600x338/UP_constable_1708572286392_1724225863905.jpg"
+                                alt="UPSC Exam"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-2.5 text-center">
+                            <p class="text-brandBlue font-semibold text-sm">UPSC</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Steno -->
+                <div class="flex-shrink-0 w-36 md:w-auto snap-center group cursor-pointer">
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="https://rukminim2.flixcart.com/image/480/640/xif0q/book/p/x/q/ssc-stenographer-grade-c-and-d-recruitment-exam-guide-original-imahd8bj9bh5shgr.jpeg?q=90"
+                                alt="Stenographer Exam"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-2.5 text-center">
+                            <p class="text-brandBlue font-semibold text-sm">Steno</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Quiz Cards Section -->
+    <section id="quiz" class="py-14 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brandBlue mb-2">Daily Practice Quizzes</h2>
+                <p class="text-gray-500 text-sm">Pick a quiz and start practicing right away</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Quiz Card 1 -->
+                <a href="https://forms.google.com" target="_blank" class="group block">
+                    <div
+                        class="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-start justify-between mb-3">
+                                <span
+                                    class="bg-brandBlue/10 text-brandBlue text-xs font-semibold px-3 py-1 rounded-full">SSC</span>
+                                <span
+                                    class="bg-green-50 text-green-600 text-xs font-medium px-2.5 py-1 rounded-full">Easy</span>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-2 line-clamp-1 group-hover:text-brandBlue transition-colors">
+                                SSC GK Quiz</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-1">Test your general knowledge with
+                                questions based on current affairs, history, and geography for SSC exams.</p>
+                            <div class="flex items-center gap-4 text-xs text-gray-400 mb-4">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    25 Questions
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    20 Min
+                                </span>
+                            </div>
+                            <button
+                                class="w-full bg-brandBlue text-white font-semibold text-sm py-2.5 rounded-lg hover:bg-blue-900 transition-colors">
+                                Start Quiz
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Quiz Card 2 -->
+                <a href="https://forms.google.com" target="_blank" class="group block">
+                    <div
+                        class="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-start justify-between mb-3">
+                                <span
+                                    class="bg-brandBlue/10 text-brandBlue text-xs font-semibold px-3 py-1 rounded-full">Railway</span>
+                                <span
+                                    class="bg-yellow-50 text-yellow-600 text-xs font-medium px-2.5 py-1 rounded-full">Medium</span>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-2 line-clamp-1 group-hover:text-brandBlue transition-colors">
+                                Railway Mock Test</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-1">Full-length mock test covering
+                                mathematics, reasoning, and general awareness for RRB NTPC & Group D.</p>
+                            <div class="flex items-center gap-4 text-xs text-gray-400 mb-4">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    50 Questions
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    45 Min
+                                </span>
+                            </div>
+                            <button
+                                class="w-full bg-brandBlue text-white font-semibold text-sm py-2.5 rounded-lg hover:bg-blue-900 transition-colors">
+                                Start Quiz
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Quiz Card 3 -->
+                <a href="https://forms.google.com" target="_blank" class="group block">
+                    <div
+                        class="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-start justify-between mb-3">
+                                <span
+                                    class="bg-brandBlue/10 text-brandBlue text-xs font-semibold px-3 py-1 rounded-full">Banking</span>
+                                <span
+                                    class="bg-red-50 text-red-600 text-xs font-medium px-2.5 py-1 rounded-full">Hard</span>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-2 line-clamp-1 group-hover:text-brandBlue transition-colors">
+                                Banking Awareness Quiz</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-1">Deep dive into banking terms, RBI
+                                policies, and financial awareness for IBPS PO, Clerk & SBI exams.</p>
+                            <div class="flex items-center gap-4 text-xs text-gray-400 mb-4">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    30 Questions
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    25 Min
+                                </span>
+                            </div>
+                            <button
+                                class="w-full bg-brandBlue text-white font-semibold text-sm py-2.5 rounded-lg hover:bg-blue-900 transition-colors">
+                                Start Quiz
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Quiz Card 4 -->
+                <a href="https://forms.google.com" target="_blank" class="group block">
+                    <div
+                        class="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-start justify-between mb-3">
+                                <span
+                                    class="bg-brandBlue/10 text-brandBlue text-xs font-semibold px-3 py-1 rounded-full">Reasoning</span>
+                                <span
+                                    class="bg-yellow-50 text-yellow-600 text-xs font-medium px-2.5 py-1 rounded-full">Medium</span>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-2 line-clamp-1 group-hover:text-brandBlue transition-colors">
+                                Reasoning Practice Quiz</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-1">Sharpen your logical reasoning
+                                with puzzles, analogies, and pattern recognition exercises.</p>
+                            <div class="flex items-center gap-4 text-xs text-gray-400 mb-4">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    35 Questions
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    30 Min
+                                </span>
+                            </div>
+                            <button
+                                class="w-full bg-brandBlue text-white font-semibold text-sm py-2.5 rounded-lg hover:bg-blue-900 transition-colors">
+                                Start Quiz
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Quiz Card 5 -->
+                <a href="https://forms.google.com" target="_blank" class="group block">
+                    <div
+                        class="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-start justify-between mb-3">
+                                <span
+                                    class="bg-brandBlue/10 text-brandBlue text-xs font-semibold px-3 py-1 rounded-full">Math</span>
+                                <span
+                                    class="bg-green-50 text-green-600 text-xs font-medium px-2.5 py-1 rounded-full">Easy</span>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-2 line-clamp-1 group-hover:text-brandBlue transition-colors">
+                                Quantitative Aptitude</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-1">Practice arithmetic, algebra, and
+                                data interpretation problems essential for all govt exams.</p>
+                            <div class="flex items-center gap-4 text-xs text-gray-400 mb-4">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    40 Questions
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    35 Min
+                                </span>
+                            </div>
+                            <button
+                                class="w-full bg-brandBlue text-white font-semibold text-sm py-2.5 rounded-lg hover:bg-blue-900 transition-colors">
+                                Start Quiz
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Quiz Card 6 -->
+                <a href="https://forms.google.com" target="_blank" class="group block">
+                    <div
+                        class="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-start justify-between mb-3">
+                                <span
+                                    class="bg-brandBlue/10 text-brandBlue text-xs font-semibold px-3 py-1 rounded-full">English</span>
+                                <span
+                                    class="bg-yellow-50 text-yellow-600 text-xs font-medium px-2.5 py-1 rounded-full">Medium</span>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-2 line-clamp-1 group-hover:text-brandBlue transition-colors">
+                                English Language Quiz</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-1">Improve grammar, vocabulary,
+                                comprehension, and sentence correction for competitive exams.</p>
+                            <div class="flex items-center gap-4 text-xs text-gray-400 mb-4">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    30 Questions
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    25 Min
+                                </span>
+                            </div>
+                            <button
+                                class="w-full bg-brandBlue text-white font-semibold text-sm py-2.5 rounded-lg hover:bg-blue-900 transition-colors">
+                                Start Quiz
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Social Media Section -->
+    <section id="contact" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold text-brandBlue mb-2">Follow RozKaQuiz</h2>
+            <p class="text-gray-500 text-sm mb-8">Daily quiz updates and practice content.</p>
+
+            <div class="flex justify-center gap-6">
+                <!-- Facebook -->
+                <a href="https://facebook.com" target="_blank" class="group">
+                    <div
+                        class="w-12 h-12 bg-brandBlue rounded-full flex items-center justify-center hover:bg-brandYellow hover:scale-110 transition-all duration-300 shadow-md">
+                        <svg class="w-5 h-5 text-white group-hover:text-brandBlue transition-colors" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 font-medium">Facebook</p>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank" class="group">
+                    <div
+                        class="w-12 h-12 bg-brandBlue rounded-full flex items-center justify-center hover:bg-brandYellow hover:scale-110 transition-all duration-300 shadow-md">
+                        <svg class="w-5 h-5 text-white group-hover:text-brandBlue transition-colors" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 font-medium">Instagram</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer class="bg-brandBlue py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-2">
+                <div class="w-6 h-6 bg-brandYellow rounded flex items-center justify-center">
+                    <span class="text-brandBlue font-bold text-xs">RQ</span>
+                </div>
+                <span class="text-white font-semibold text-sm">RozKaQuiz</span>
+            </div>
+            <p class="text-white/60 text-xs">&copy; 2025 RozKaQuiz. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script src="assets/js/script.js"></script>
+
+    <!-- "quiz_cards": [
+    {
+    "category": "SSC",
+    "difficulty": "Easy",
+    "title": "SSC GK Quiz",
+    "description": "Practice SSC GK questions.",
+    "questions": 25,
+    "time": "20 Min",
+    "link": "https://forms.google.com"
+    },
+    {
+    "category": "Railway",
+    "difficulty": "Medium",
+    "title": "Railway Mock Test",
+    "description": "Practice Railway questions.",
+    "questions": 50,
+    "time": "45 Min",
+    "link": "https://forms.google.com"
+    }
+    ] -->
+</body>
+
+</html>

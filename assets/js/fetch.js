@@ -84,13 +84,13 @@ fetch(`${setting}/site-setting.json`)
         /* ========================= OG IMAGE ========================= */
         document.getElementById("ogImage").setAttribute(
             "content",
-            `${currentDomain}/${siteData.preview_image}`
+            `${siteData.preview_image}`
         );
 
         /* ========================= TWITTER IMAGE ========================= */
         document.getElementById("twitterImage").setAttribute(
             "content",
-            `${currentDomain}/${siteData.preview_image}`
+            `${siteData.preview_image}`
         );
 
         /* ========================= SOCIAL ICONS ========================= */

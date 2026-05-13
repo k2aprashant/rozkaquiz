@@ -1,11 +1,11 @@
 {
     "quiz_cards": [
         {
-            "title": "SSC GD Mock Test 2026",
+            "title": "SSC Modern History Quiz 2026",
             "link": "https://forms.gle/4bJ8FyUsY3D7FtTe7",
-            "category": "SSC",
+            "category": "GK",
             "difficulty": "Easy",
-            "description": "Practice SSC GD previous year questions with detailed solutions.",
+            "description": "Practice important SSC Modern History GK questions for SSC GD, CGL, CHSL and other competitive exams.",
             "questions": "25",
             "time": "15 Min"
         }
